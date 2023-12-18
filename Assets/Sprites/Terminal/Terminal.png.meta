@@ -1,0 +1,744 @@
+fileFormatVersion: 2
+guid: cb269c0f4b0cf5c4d803e0b25de22d57
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2063687834043970181
+    second: Terminal_0
+  - first:
+      213: -8510719012840463169
+    second: Terminal_1
+  - first:
+      213: -2849132938174681483
+    second: Terminal_2
+  - first:
+      213: -6049120364413283058
+    second: Terminal_3
+  - first:
+      213: -5449659046274210153
+    second: Terminal_4
+  - first:
+      213: -4716127311389211941
+    second: Terminal_5
+  - first:
+      213: -4634869827702984307
+    second: Terminal_6
+  - first:
+      213: 4087143007507955366
+    second: Terminal_7
+  - first:
+      213: -4199638095226819586
+    second: Terminal_8
+  - first:
+      213: -3705514457068715062
+    second: Terminal_9
+  - first:
+      213: -1759546088965816518
+    second: Terminal_10
+  - first:
+      213: -3978002899832528723
+    second: Terminal_11
+  - first:
+      213: 5748279248095157555
+    second: Terminal_12
+  - first:
+      213: 8960848552741898453
+    second: Terminal_13
+  - first:
+      213: 1725740046242166055
+    second: Terminal_14
+  - first:
+      213: -934100905573881214
+    second: Terminal_15
+  - first:
+      213: 6515016246110834000
+    second: Terminal_16
+  - first:
+      213: 1399149648019877618
+    second: Terminal_17
+  - first:
+      213: -7995637747488853916
+    second: Terminal_18
+  - first:
+      213: 6719841408204951046
+    second: Terminal_19
+  - first:
+      213: 5675523153590724913
+    second: Terminal_20
+  - first:
+      213: -4199476634102727724
+    second: Terminal_21
+  - first:
+      213: -4756140671008888923
+    second: Terminal_22
+  - first:
+      213: 8810830900565321745
+    second: Terminal_23
+  - first:
+      213: -3243515463986707833
+    second: Terminal_24
+  - first:
+      213: -6772310792201697833
+    second: Terminal_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Terminal_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 5180
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d838c49de4c53e0800000000000000
+      internalID: -2063687834043970181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_1
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 5180
+        width: 810
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb42b78462ad3e980800000000000000
+      internalID: -8510719012840463169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_2
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 5180
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57eab3620b8d578d0800000000000000
+      internalID: -2849132938174681483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_3
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 5180
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05909304153d0ca0800000000000000
+      internalID: -6049120364413283058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_4
+      rect:
+        serializedVersion: 2
+        x: 4219
+        y: 5180
+        width: 809
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796e4df88fbee54b0800000000000000
+      internalID: -5449659046274210153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_5
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 4157
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2c0298233fc8eb0800000000000000
+      internalID: -4716127311389211941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_6
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 4157
+        width: 810
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d817693c272adafb0800000000000000
+      internalID: -4634869827702984307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_7
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 4157
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aebbb429e278b830800000000000000
+      internalID: 4087143007507955366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_8
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 4157
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbaecc2763e7b5c0800000000000000
+      internalID: -4199638095226819586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_9
+      rect:
+        serializedVersion: 2
+        x: 4219
+        y: 4157
+        width: 809
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac34854eb3e539cc0800000000000000
+      internalID: -3705514457068715062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_10
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 3134
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fb3419726d497e0800000000000000
+      internalID: -1759546088965816518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_11
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 3134
+        width: 810
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da02200607b4bc8c0800000000000000
+      internalID: -3978002899832528723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_12
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 3134
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d167c358df5cf40800000000000000
+      internalID: 5748279248095157555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_13
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 3134
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8014838445b5c70800000000000000
+      internalID: 8960848552741898453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_14
+      rect:
+        serializedVersion: 2
+        x: 4219
+        y: 3134
+        width: 809
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7253eeebd6f03f710800000000000000
+      internalID: 1725740046242166055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_15
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2108
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ae5eaec286903f0800000000000000
+      internalID: -934100905573881214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_16
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 2108
+        width: 810
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05dc55ff1ccf96a50800000000000000
+      internalID: 6515016246110834000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_17
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 2108
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe66dd1137ca6310800000000000000
+      internalID: 1399149648019877618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_18
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 2108
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460f834d4d9c90190800000000000000
+      internalID: -7995637747488853916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_19
+      rect:
+        serializedVersion: 2
+        x: 4219
+        y: 2108
+        width: 809
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e4403582ca14d50800000000000000
+      internalID: 6719841408204951046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_20
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1085
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139a74cec3283ce40800000000000000
+      internalID: 5675523153590724913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_21
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1085
+        width: 810
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbf0c5404678b5c0800000000000000
+      internalID: -4199476634102727724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_22
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 1085
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a72ab2424bcefdb0800000000000000
+      internalID: -4756140671008888923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_23
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 1085
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1182b34b50c564a70800000000000000
+      internalID: 8810830900565321745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_24
+      rect:
+        serializedVersion: 2
+        x: 4219
+        y: 1085
+        width: 809
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7820691ded7bcf2d0800000000000000
+      internalID: -3243515463986707833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Terminal_25
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 62
+        width: 807
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5064a373be302a0800000000000000
+      internalID: -6772310792201697833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

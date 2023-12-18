@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Spike
+  - Enemy
+  - Wall
+  - Weapon
+  - BloodParticle
+  - Region
+  - Terminal
+  - Bullet
+  - Destructable
+  - Level
+  - BossBullet
+  - Boss
+  - DeathScreen
+  - Gore
+  - FlavourText
+  - ItemName
+  - MainItem
+  - Item
+  - BulletPickupable
+  - Water
+  - Hook
+  - Fishstiary
+  - Canvas
+  - Audio
+  - Terminal_UI
+  - VirtualCamera
+  - RainParticle
+  - GlobalVolume
+  - hamsterText
+  - TileParticle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Spikes
+  - Enviroment
+  - Ground
+  - Wall
+  - Player
+  - Enemy
+  - Post Processing
+  - Destructable
+  - Weapon
+  - Gore
+  - Fluids
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Wallpaper
+    uniqueID: 2604637133
+    locked: 0
+  - name: BackGround
+    uniqueID: 43322759
+    locked: 0
+  - name: Enviroment
+    uniqueID: 358552045
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Splatter
+    uniqueID: 626563775
+    locked: 0
+  - name: Player
+    uniqueID: 2083668381
+    locked: 0
+  - name: Extra
+    uniqueID: 3140337011
+    locked: 0
