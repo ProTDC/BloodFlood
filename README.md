@@ -1,3 +1,7 @@
 # BloodFlood
-A repository for my platoformer game
 
+Los video games.
+
+## Description
+
+A repository for my videogame releasing on Steam.
