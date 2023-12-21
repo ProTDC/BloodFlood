@@ -10339,9 +10339,7 @@ GameObject:
   - component: {fileID: 3277721819632592744}
   - component: {fileID: 3277721819632592742}
   - component: {fileID: 3277721819632592741}
-  - component: {fileID: 3277721819632592750}
   - component: {fileID: 5257764487148702203}
-  - component: {fileID: 1968963680003079502}
   - component: {fileID: 5498086305696656655}
   m_Layer: 10
   m_Name: Player
@@ -10651,18 +10649,6 @@ MonoBehaviour:
   player: {fileID: 3277721819632592746}
   shootingCooldown: 2
   canShoot: 0
---- !u!114 &3277721819632592750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3277721819632592740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5fddeeb77f67644a31c7b3818daf22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5257764487148702203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10680,18 +10666,6 @@ MonoBehaviour:
   isParrying: 0
   animator: {fileID: 3277721818403321108}
   spriteRenderer: {fileID: 3277721819267645221}
---- !u!114 &1968963680003079502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3277721819632592740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd3bf7e41ec0e343b55c9ad377cd919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5498086305696656655
 MonoBehaviour:
   m_ObjectHideFlags: 0

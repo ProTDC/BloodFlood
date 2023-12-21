@@ -65,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Variables")]
+    public bool canWallJump;
     private float cameraTime = 1f;
     private float cameraTimeCounter;
     private float coyoteTime = 0.2f;
@@ -207,7 +208,7 @@ public class PlayerMovement : MonoBehaviour
                 body.gravityScale = 1.5f;
             }
 
-            if (onWall() && !isGrounded() && Input.GetKeyDown(jumpKey))
+            if (onWall() && !isGrounded() && Input.GetKeyDown(jumpKey) && canWallJump)
             {
                 body.gravityScale = 1.5f;
                 Jump();
@@ -500,7 +501,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanUseBloodSword()
     {
-        return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.BloodSword);
+        //return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.BloodSword);
+        return true;
     }
 
     public void SavePlayer()

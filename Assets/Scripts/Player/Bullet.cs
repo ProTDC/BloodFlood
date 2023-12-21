@@ -25,20 +25,20 @@ public class Bullet : MonoBehaviour
         {
             enemy.Damage(bulletDamage, transform.gameObject);
 
-            if (canStun)
-            {
-                StartCoroutine(StunEnemy(enemy, 2.5f)); 
-            }
+            //if (canStun)
+            //{
+            //    StartCoroutine(StunEnemy(enemy, 2.5f)); 
+            //}
         }
 
         Destroy(gameObject);
     }
 
-    private IEnumerator StunEnemy(EnemyHealth enemy, float stunDuration)
-    {
-        enemy.Stun(stunDuration);
+    //private IEnumerator StunEnemy(EnemyHealth enemy, float stunDuration)
+    //{
+    //    enemy.Stun(stunDuration);
 
-        yield return null;
-    }
+    //    yield return null;
+    //}
 
 }

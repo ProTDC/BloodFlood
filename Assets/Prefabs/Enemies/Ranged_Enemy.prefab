@@ -5069,7 +5069,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5
-  m_LinearDrag: 0
+  m_LinearDrag: 15
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -5131,7 +5131,6 @@ MonoBehaviour:
   lifeBlood: {fileID: 7542911618869230647}
   deathBlood: {fileID: 7542911619806175972}
   rb: {fileID: 7542911619561370624}
-  playerGameObject: {fileID: 0}
   bulletPickup: {fileID: 0}
   level: {fileID: 0}
 --- !u!114 &7542911619561370626
@@ -5186,7 +5185,8 @@ MonoBehaviour:
   animator: {fileID: 7542911619561370638}
   range: 16
   timeBtwShots: 4
-  shotAccuracy: 2
+  accuracy: 0
+  shootingAngle: 0
   isFlipped: 0
 --- !u!1 &7542911619806175975
 GameObject:
