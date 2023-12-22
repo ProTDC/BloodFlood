@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public bool isMetal = false;
+
     [SerializeField]
     private bool damageable = true;
 
@@ -81,7 +83,15 @@ public class EnemyHealth : MonoBehaviour
 
         if (damageable && !hit && currentHealth > 0)
         {
-            audioManager.PlaySFX(audioManager.playerBulletFlesh);
+            if (isMetal)
+            {
+                audioManager.PlaySFX(audioManager.playerBulletMetal);
+            }
+            else
+            {
+                audioManager.PlaySFX(audioManager.playerBulletFlesh);
+            }
+
             rb.velocity = Vector2.zero;
             hit = true;
             currentHealth -= amount;

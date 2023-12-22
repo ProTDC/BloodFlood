@@ -31,25 +31,32 @@ public class RangedEnemy : MonoBehaviour
 
         if (distance < range)
         {
-            // Calculate the direction from the enemy to the player
-            Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
+            timer += Time.deltaTime;
 
-            // Calculate the angle between the enemy's forward direction and the direction to the player
-            float angleToPlayer = Vector3.Angle(transform.right, directionToPlayer);
-
-            // Check if the player is within the allowed shooting angle
-            if (angleToPlayer <= shootingAngle)
+            if (timer >= timeBtwShots)
             {
-                timer += Time.deltaTime;
+                animator.Play("Shoot");
+                timer = 0;
 
-                if (timer >= timeBtwShots)
-                {
-                    animator.Play("Shoot");
-                    timer = 0;
-
-                    Quaternion shotRotation = firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-5, 5) * accuracy);
-                }
+                Quaternion shotRotation = firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-5, 5) * accuracy);
             }
+
+            //Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
+            
+            //float angleToPlayer = Vector3.Angle(transform.right, directionToPlayer);
+   
+            //if (angleToPlayer <= shootingAngle)
+            //{
+            //    timer += Time.deltaTime;
+
+            //    if (timer >= timeBtwShots)
+            //    {
+            //        animator.Play("Shoot");
+            //        timer = 0;
+
+            //        Quaternion shotRotation = firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-5, 5) * accuracy);
+            //    }
+            //}
         }
 
     }

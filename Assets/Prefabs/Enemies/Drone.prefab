@@ -5084,6 +5084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4850d14d0afb36048994e192f17a05e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMetal: 1
   damageable: 1
   healthAmount: 20
   invulnerabilityTime: 0.2
@@ -5126,10 +5127,8 @@ MonoBehaviour:
   lifeBlood: {fileID: 7689615024166043168}
   deathBlood: {fileID: 7689615025779221815}
   rb: {fileID: 7689615025424036049}
-  playerGameObject: {fileID: 0}
   bulletPickup: {fileID: 0}
   level: {fileID: 0}
-  shake: {fileID: 0}
 --- !u!114 &7689615025424036052
 MonoBehaviour:
   m_ObjectHideFlags: 0

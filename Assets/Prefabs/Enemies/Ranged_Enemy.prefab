@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.8
+      scalar: 1.2
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5017,7 +5017,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7945955, y: -1.1021807}
+  m_Offset: {x: 0.94724816, y: -1.1021807}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5028,7 +5028,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.91772, y: 4.8384967}
+  m_Size: {x: 4.966103, y: 4.8384967}
   m_EdgeRadius: 0
 --- !u!61 &7542911619561370637
 BoxCollider2D:
@@ -5043,7 +5043,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.808172, y: -1.1362642}
+  m_Offset: {x: 0.95786375, y: -1.1362643}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5054,7 +5054,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.944873, y: 4.7233124}
+  m_Size: {x: 4.5577965, y: 4.7233124}
   m_EdgeRadius: 0
 --- !u!50 &7542911619561370624
 Rigidbody2D:
@@ -5070,13 +5070,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 5
   m_LinearDrag: 15
-  m_AngularDrag: 0.05
+  m_AngularDrag: 3.23
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &7542911619561370625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5184,7 +5184,7 @@ MonoBehaviour:
   firePoint: {fileID: 7542911618900642965}
   animator: {fileID: 7542911619561370638}
   range: 16
-  timeBtwShots: 4
+  timeBtwShots: 3.5
   accuracy: 0
   shootingAngle: 0
   isFlipped: 0

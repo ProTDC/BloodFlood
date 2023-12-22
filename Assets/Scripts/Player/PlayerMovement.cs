@@ -154,15 +154,6 @@ public class PlayerMovement : MonoBehaviour
             canFlip = true;
         }
 
-        //if (!isGrounded() && MeleeAttackManager.instance.isSwingingSword)
-        //{
-        //    canFlip = false;
-        //}
-        //else
-        //{
-        //    canFlip = true;
-        //}
-
         horizontalInput = Input.GetAxis("Horizontal");
 
         if (horizontalInput > 0.01f && !FacingRight)
@@ -202,6 +193,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 body.gravityScale = 8f;
                 body.velocity = Vector2.zero;
+                squashStretchAnimator.SetTrigger("WallGlide");
             }
             else
             {

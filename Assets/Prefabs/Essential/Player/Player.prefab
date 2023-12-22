@@ -5434,8 +5434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eebe2eb5dccb01499663e3a7e349ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: -3115175126188884953, guid: e62ffce580ff55d4fa544b7966eda9af, type: 3}
-  projectile: {fileID: 2515340402580030399, guid: 817880d0bb79bcc4caf60e5c1987074b, type: 3}
 --- !u!1 &3277721819226550054
 GameObject:
   m_ObjectHideFlags: 0
@@ -10574,6 +10572,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  canWallJump: 1
   isDashing: 0
   dashingPower: 36
   dashingTime: 0.2
@@ -10825,8 +10824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eebe2eb5dccb01499663e3a7e349ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: -3115175126188884953, guid: e62ffce580ff55d4fa544b7966eda9af, type: 3}
-  projectile: {fileID: 2515340402580030399, guid: 817880d0bb79bcc4caf60e5c1987074b, type: 3}
 --- !u!1 &5800448581573753425
 GameObject:
   m_ObjectHideFlags: 0

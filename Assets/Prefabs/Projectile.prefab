@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9054592145759426091}
   - component: {fileID: 2515340402580030399}
   - component: {fileID: 6763960258763598517}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Projectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7479857594601925353}
   m_LocalRotation: {x: -0, y: -1, z: 0, w: 0.00000013113416}
   m_LocalPosition: {x: 1.76, y: 0.4, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 5.2041035}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 5.2041035}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8f00b03f1b93e43adb99f0bda22a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   bulletDamage: 30
   rb: {fileID: 6928972250814963654}
   followsPlayer: 1
@@ -189,7 +189,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 358552045
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Time: 0.1
   m_Parameters:

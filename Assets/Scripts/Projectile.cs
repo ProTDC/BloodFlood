@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 0f;
+    public float speed = 20f;
     public int bulletDamage;
     public Rigidbody2D rb;
     public bool followsPlayer;
     private GameObject player;
     private bool facingLeft = true;
+    private bool canHurtEnemies = false; 
 
     public Transform[] firePoints;
 
@@ -44,13 +45,27 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.CompareTag("Enemy") && canHurtEnemies)
+        {
+            Debug.Log("Collided with enemy!");
+            EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+
+            if (enemy != null)
+            {
+                enemy.Damage(bulletDamage, transform.gameObject);
+            }
+        }
     }
 
     public void Flip()
     {
-        facingLeft = !facingLeft;
+        canHurtEnemies = true;
+
+        rb.velocity = -rb.velocity * 2f;
 
         transform.Rotate(0f, 180f, 0f);
+
     }
 
 }

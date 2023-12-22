@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class BulletCollision : MonoBehaviour
 {
-    public BossBullet bullet;
-    public Projectile projectile;
+    private AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("BossBullet"))
-        {
-           Destroy(collision);
-        }
-
         if (collision.CompareTag("Bullet"))
         {
-            Destroy(collision);
+            audioManager.PlaySFX(audioManager.playerSwordSwing);
+            collision.GetComponent<Projectile>().Flip();
+            
         }
     }
 }
