@@ -10,12 +10,16 @@ public class Projectile : MonoBehaviour
     public bool followsPlayer;
     private GameObject player;
     private bool facingLeft = true;
-    private bool canHurtEnemies = false; 
+    private bool canHurtEnemies = false;
+    private AudioManager audioManager;
 
+    public GameObject explosionParticle;
     public Transform[] firePoints;
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (followsPlayer)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -53,7 +57,9 @@ public class Projectile : MonoBehaviour
 
             if (enemy != null)
             {
+                Instantiate(explosionParticle, transform.position, Quaternion.identity);
                 enemy.Damage(bulletDamage, transform.gameObject);
+                audioManager.PlaySFX(audioManager.playerDying);
             }
         }
     }

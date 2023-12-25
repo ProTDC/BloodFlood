@@ -149,6 +149,7 @@ MonoBehaviour:
   bulletDamage: 30
   rb: {fileID: 6928972250814963654}
   followsPlayer: 1
+  explosionParticle: {fileID: 2689860022662416512, guid: a13dab5aae94ba24385d94b793673ca4, type: 3}
   firePoints: []
 --- !u!96 &6763960258763598517
 TrailRenderer:

@@ -189,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
-            if (onWall() && !isGrounded())
+            if (onWall() && !isGrounded() && canWallJump)
             {
                 body.gravityScale = 8f;
                 body.velocity = Vector2.zero;
@@ -205,6 +205,13 @@ public class PlayerMovement : MonoBehaviour
                 body.gravityScale = 1.5f;
                 Jump();
                 audioManager.PlaySFX(audioManager.playerJumping);
+            }
+
+            if (onWall() && isGrounded() && Input.GetKeyDown(jumpKey))
+            {
+                canWallJump = false;
+                Invoke("AllowWalljump", 1.1f);
+                Jump();
             }
 
             if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
@@ -299,6 +306,15 @@ public class PlayerMovement : MonoBehaviour
             FacingRight = !FacingRight;
 
             transform.Rotate(0f, 180f, 0f);
+        }
+    }
+
+    private void AllowWalljump()
+    {
+        if (canWallJump == false)
+        {
+            canWallJump = true;
+
         }
     }
 
