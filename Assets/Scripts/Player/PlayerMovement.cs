@@ -112,6 +112,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        Physics2D.IgnoreLayerCollision(10, 11, false);
+
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         currentBullets = maxBullets;
@@ -210,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
             if (onWall() && isGrounded() && Input.GetKeyDown(jumpKey))
             {
                 canWallJump = false;
-                Invoke("AllowWalljump", 1.1f);
+                Invoke("AllowWalljump", .6f);
                 Jump();
             }
 
@@ -429,8 +431,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Water"))
         {
-            Damage(999);
-            healthbar.SetHealth(currentHealth);
+            //Damage(999);
+            //healthbar.SetHealth(currentHealth);
+            transform.position = new Vector3(-2.8f, -3.9f, 0f);
         }
     }
 
@@ -454,7 +457,7 @@ public class PlayerMovement : MonoBehaviour
         isHealing = true;
 
         squashStretchAnimator.SetTrigger("Heal");
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.8f);
         currentHealth += Convert.ToInt32(heal);
         healthbar.SetHealth(currentHealth);
         currentBlood -= heal;

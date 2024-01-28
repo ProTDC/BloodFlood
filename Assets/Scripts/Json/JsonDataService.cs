@@ -54,4 +54,27 @@ public class JsonDataService : IDataService
             throw ex;
         }
     }
+
+    public bool DeleteData<T>(string RelativePath)
+    {
+        string path = Application.persistentDataPath + RelativePath;
+
+        try
+        {
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Failed to delete data due to: {ex.Message} {ex.StackTrace}");
+            return false;
+        }
+    }
 }

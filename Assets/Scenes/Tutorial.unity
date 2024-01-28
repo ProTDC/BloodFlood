@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1930213370310908477, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002273364084014154, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -312,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3543397148117097344, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3543397148117097345, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: lines.Array.data[1]
@@ -332,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3543397148283793755, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3543397148392328362, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: m_Name
@@ -536,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6092122138713650071, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6219842136815979407, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
       propertyPath: m_IsActive
@@ -724,6 +728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9166883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3184987468129555337, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
+  m_PrefabInstance: {fileID: 9166870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9166884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6956252709282210339, guid: bfd870f0b32fe1346a9695a3a6dadd95, type: 3}
@@ -21636,6 +21645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3277721819632592744, guid: 2b67b4110e00db445ae46473f909bd10, type: 3}
+      propertyPath: bloodswordChargeBar
+      value: 
+      objectReference: {fileID: 9166883}
     - target: {fileID: 3277721819632592746, guid: 2b67b4110e00db445ae46473f909bd10, type: 3}
       propertyPath: bloodbar
       value: 

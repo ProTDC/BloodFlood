@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DroneShooting : MonoBehaviour
 {
+    private AudioManager audioManager;
+    public AudioSource droneChase;
     public GameObject bullet;
     public Transform playerTransform;
     public GameObject player;
@@ -21,6 +23,7 @@ public class DroneShooting : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -32,12 +35,16 @@ public class DroneShooting : MonoBehaviour
         if (distance < range)
         {
             timer += Time.deltaTime;
-
+            droneChase.mute = false;
             if (timer > 2)
             {
                 animator.SetTrigger("Attack");
                 timer = 0;
             }
+        }
+        else
+        {
+            droneChase.mute = true;
         }
 
     }
@@ -63,6 +70,7 @@ public class DroneShooting : MonoBehaviour
 
     public void Shoot()
     {
+        audioManager.PlaySFX(audioManager.droneShoot);
         GameObject.Instantiate(bullet, firePoint1.position, firePoint1.rotation);
         GameObject.Instantiate(bullet, firePoint2.position, firePoint2.rotation);
         GameObject.Instantiate(bullet, firePoint3.position, firePoint3.rotation);

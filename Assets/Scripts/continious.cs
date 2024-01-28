@@ -6,22 +6,25 @@ using UnityEngine.UI;
 public class continious : MonoBehaviour
 {
     private Slider slider;
-    // Start is called before the first frame update
+    public float movementDuration = 1.0f; 
+
+    private float timer = 0.0f;
+
     void Start()
     {
         slider = GetComponent<Slider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (slider.value == slider.maxValue)
+        timer += Time.deltaTime;
+
+        float normalizedTime = timer / movementDuration;
+        slider.value = Mathf.Lerp(0, slider.maxValue, normalizedTime);
+
+        if (timer >= movementDuration)
         {
-            slider.value = 0;
-        }
-        else
-        {
-            slider.value += 1;
+            timer -= movementDuration; 
         }
     }
 }

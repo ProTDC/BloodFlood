@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class MeleeAttackManager : MonoBehaviour
 {
     public static MeleeAttackManager instance;
+    public GameObject bloodswordChargeBar;
+    private Slider bloodswordChargeBar_Slider;
+    public float movementDuration = 2.0f;
+    private float timer = 0.0f;
 
     public float defaultForce = 300;
     public float upwardsForce = 600;
@@ -38,6 +43,7 @@ public class MeleeAttackManager : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         meleeAnimatior = GetComponentInChildren<MeleeWeapon>().gameObject.GetComponent<Animator>();
         bloodAnimatior = this.transform.Find("BloodWeapon").GetComponent<Animator>();
+        bloodswordChargeBar_Slider = bloodswordChargeBar.GetComponent<Slider>();
     }
     
     private void Update()
@@ -61,8 +67,21 @@ public class MeleeAttackManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.U) && canSwing && movement.CanUseBloodSword() == true)
         {
+            bloodswordChargeBar.SetActive(true);
+            timer += Time.deltaTime;
+            bloodswordChargeBar_Slider.value = Mathf.Lerp(0, bloodswordChargeBar_Slider.maxValue, timer / 2);
+
             bloodSwordChargeTime += Time.deltaTime;
             anim.SetTrigger("BloodSword");
+        }
+
+        if (Input.GetKeyUp(KeyCode.U) && (bloodSwordChargeTime < 2))
+        {
+            anim.SetTrigger("Idle");
+            bloodSwordChargeTime = 0;
+            bloodswordChargeBar_Slider.value = 0;
+            timer = 0;
+            bloodswordChargeBar.SetActive(false);
         }
 
         if (Input.GetKeyUp(KeyCode.U) && (bloodSwordChargeTime > 2) && movement.CanUseBloodSword() == true)
@@ -70,11 +89,17 @@ public class MeleeAttackManager : MonoBehaviour
             bloodAnimatior.SetTrigger("BloodMeleeSwipe");
             anim.SetTrigger("BloodSlash");
             bloodSwordChargeTime = 0;
+            bloodswordChargeBar_Slider.value = 0;
+            timer = 0;
+            bloodswordChargeBar.SetActive(false);
         }
 
         if (Input.GetKeyUp(KeyCode.U) && (bloodSwordChargeTime < 2))
         {
             bloodSwordChargeTime = 0;
+            bloodswordChargeBar_Slider.value = 0;
+            timer = 0;
+            bloodswordChargeBar.SetActive(false);
         }
 
         if (meleeAttack && Input.GetAxis("Vertical") > 0)
@@ -104,18 +129,6 @@ public class MeleeAttackManager : MonoBehaviour
         isSwingingSword = false;
         horizontalMeleeAttack = false;
         canSwing = true;
-    }
-
-    public bool HasPressedKey()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     public void Reset()

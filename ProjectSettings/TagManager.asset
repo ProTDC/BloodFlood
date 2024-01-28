@@ -35,6 +35,7 @@ TagManager:
   - GlobalVolume
   - hamsterText
   - TileParticle
+  - BloodswordCharge
   layers:
   - Default
   - TransparentFX

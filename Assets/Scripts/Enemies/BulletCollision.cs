@@ -14,9 +14,16 @@ public class BulletCollision : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            audioManager.PlaySFX(audioManager.playerSwordSwing);
-            collision.GetComponent<Projectile>().Flip();
-            
+            StartCoroutine(Reflect(collision));
         }
+    }
+
+    public IEnumerator Reflect(Collider2D bullet)
+    {
+        audioManager.PlaySFX(audioManager.playerSwordSwing);
+        //Time.timeScale = 0.2f;
+        bullet.GetComponent<Projectile>().Flip();
+        yield return new WaitForSeconds(0.1f);
+        //Time.timeScale = 1;
     }
 }

@@ -9,7 +9,7 @@ public class ExtraMenu : MonoBehaviour
     [SerializeField] private GameObject[] backgroundObjects;
     [SerializeField] private TextMeshProUGUI selectionText;
 
-    [SerializeField] private int index;
+    [SerializeField] public int index;
     [SerializeField] private int indexLimit;
 
     private void Start()

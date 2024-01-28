@@ -78,8 +78,12 @@ public class FunnyText : MonoBehaviour
         "Hey there ^_^",
         "Linxus",
         "Hello World!",
-        "",
-        ""
+        "Subscribe to Grifdar",
+        "Subscribe to ProTDC",
+        "This is not a Minecraft reference",
+        "The new E-Sport",
+        "Rubrub"
+
 
     };
 

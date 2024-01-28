@@ -14,12 +14,29 @@ public class Projectile : MonoBehaviour
     private AudioManager audioManager;
 
     public GameObject explosionParticle;
-    public Transform[] firePoints;
 
     void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
+        //if (followsPlayer)
+        //{
+        //    player = GameObject.FindGameObjectWithTag("Player");
+
+        //    Vector3 direction = player.transform.position - transform.position;
+        //    rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+
+        //    float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        //    transform.rotation = Quaternion.Euler(0, 0, rot);
+        //}
+        //else
+        //{
+        //    rb.velocity = transform.right * speed;
+        //}
+    }
+
+    private void FixedUpdate()
+    {
         if (followsPlayer)
         {
             player = GameObject.FindGameObjectWithTag("Player");

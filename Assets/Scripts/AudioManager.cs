@@ -38,6 +38,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerSwordMetal;
     public AudioClip playerBulletFlesh;
     public AudioClip playerBulletMetal;
+    public AudioClip droneIdle;
+    public AudioClip droneChase;
+    public AudioClip droneShoot;
 
     public bool isFishing = false;
 
