@@ -114,7 +114,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Stun(float stunDuration)
     {
-        if (!isStunned) // Check if the enemy is not already stunned
+        if (!isStunned)
         {
             StartCoroutine(StunEffect(stunDuration));
         }
@@ -141,7 +141,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (Random.Range(0f, 1f) <= 0.1f) 
         {
-            //Instantiate(bulletPickup, transform.position, Quaternion.identity);
+            Instantiate(bulletPickup, transform.position, Quaternion.identity);
             PlayerMovement.instance.currentBullets += 1;
         }
 

@@ -67,6 +67,11 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
         if (collision.CompareTag("Enemy") && canHurtEnemies)
         {
             Debug.Log("Collided with enemy!");

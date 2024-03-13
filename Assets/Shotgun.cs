@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Shotgun : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -32,13 +32,25 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        if (canShoot == true) 
+        if (canShoot == true)
         {
             var audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
             audio.PlaySFX(audio.playerShooting);
-            GameObject.Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            anim.SetTrigger("Shoot");
 
+            int burstSize = 6;
+
+            for (int i = 0; i < burstSize; i++)
+            {
+                float minRotation = -7f;
+                float maxRotation = 7f;
+                float randomRotation = Random.Range(minRotation, maxRotation);
+
+                Quaternion bulletRotation = Quaternion.Euler(0, 0, randomRotation);
+
+                GameObject.Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * bulletRotation);
+            }
+
+            anim.SetTrigger("ShotgunShoot");
             player.currentBullets--;
         }
         else

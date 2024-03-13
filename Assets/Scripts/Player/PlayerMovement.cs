@@ -379,13 +379,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckDash()
     {
+        //This boring piece of shit spawns afterimages if they haven't already
         if (isDashing && afterImageCoroutine == null)
         {
             afterImageCoroutine = StartCoroutine(SpawnAfterImages());
         }
         else if (!isDashing && afterImageCoroutine != null)
         {
-            // Stop the coroutine if not dashing
+            //Not dashing? The fuck? Stop the Coroutine then!
             StopCoroutine(afterImageCoroutine);
             afterImageCoroutine = null;
         }
@@ -493,7 +494,10 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Invunerablility()
     {
+        //Ignores collision with the enemy?? Or something idk im high
         Physics2D.IgnoreLayerCollision(10, 11, true);
+
+        //Flashes the player red so the player know they fucked up
         for (int i = 0; i < numberOfFlashes; i++)
         {
             spriteRend.color = new Color(1, 0, 0, 0.5f);
@@ -502,6 +506,7 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
 
+        //Ok enough bullying turn that shit off
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
 
