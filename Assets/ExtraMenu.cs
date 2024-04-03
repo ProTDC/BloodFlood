@@ -9,24 +9,27 @@ public class ExtraMenu : MonoBehaviour
     [SerializeField] private GameObject[] backgroundObjects;
     [SerializeField] private TextMeshProUGUI selectionText;
 
-    [SerializeField] public int index;
+    [SerializeField] public int backgroundIndex;
     [SerializeField] private int indexLimit;
+
+    private AudioManagerMenu audioManager;
+    [SerializeField] private TextMeshProUGUI selectionTextMusic;
+
+    [SerializeField] public int musicIndex;
+    [SerializeField] private int musicIndexLimit;
 
     private void Start()
     {
-        indexLimit = backgroundObjects.Length - 1;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerMenu>();
+        musicIndexLimit = audioManager.menuThemes.Length - 1;
 
-        index = PlayerPrefs.GetInt("background");
+        indexLimit = backgroundObjects.Length - 1;
+        backgroundIndex = PlayerPrefs.GetInt("background");
     }
 
     private void Update()
     {
-        //if (index >= indexLimit)
-        //{
-        //    index = indexLimit;
-        //}
-
-        if (index == 0)
+        if (backgroundIndex == 0)
         {
             selectionText.text = "Ship";
             backgroundObjects[0].SetActive(true);
@@ -38,7 +41,7 @@ public class ExtraMenu : MonoBehaviour
             backgroundObjects[0].SetActive(false);
         }
 
-        if (index == 1)
+        if (backgroundIndex == 1)
         {
             selectionText.text = "Planetarium";
             backgroundObjects[1].SetActive(true);
@@ -50,24 +53,97 @@ public class ExtraMenu : MonoBehaviour
             backgroundObjects[1].SetActive(false);
         }
 
-        if (index > indexLimit)
+        if (backgroundIndex == 2)
         {
-            index = 0;
+            selectionText.text = "Infection";
+            backgroundObjects[2].SetActive(true);
+            PlayerPrefs.SetInt("background", 2);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            backgroundObjects[2].SetActive(false);
         }
 
-        if (index < 0)
+        if (backgroundIndex > indexLimit)
         {
-            index = indexLimit;
+            backgroundIndex = 0;
+        }
+
+        if (backgroundIndex < 0)
+        {
+            backgroundIndex = indexLimit;
+        }
+
+        if (musicIndex > musicIndexLimit)
+        {
+            musicIndex = 0;
+        }
+
+        if (musicIndex < 0)
+        {
+            musicIndex = musicIndexLimit;
+        }
+
+        switch (musicIndex)
+        {
+            case 0:
+                selectionTextMusic.text = "MainTheme";
+                PlayerPrefs.SetInt("MenuMusic", 0);
+                PlayerPrefs.Save();
+                break;
+
+            case 1:
+                selectionTextMusic.text = "Ship";
+                PlayerPrefs.SetInt("MenuMusic", 1);
+                PlayerPrefs.Save();
+                break;
+
+            case 2:
+                selectionTextMusic.text = "Infection";
+                PlayerPrefs.SetInt("MenuMusic", 2);
+                PlayerPrefs.Save();
+                break;
+
+            case 3:
+                selectionTextMusic.text = "El_Espanol";
+                PlayerPrefs.SetInt("MenuMusic", 3);
+                PlayerPrefs.Save();
+                break;
+
+            case 4:
+                selectionTextMusic.text = "Natarja";
+                PlayerPrefs.SetInt("MenuMusic", 4);
+                PlayerPrefs.Save();
+                break;
+
+            case 5:
+                selectionTextMusic.text = "Shiva";
+                PlayerPrefs.SetInt("MenuMusic", 5);
+                PlayerPrefs.Save();
+                break;
         }
     }
 
     public void NextBackground()
     {
-        index++;
+        backgroundIndex++;
     }
 
     public void PreviousBackground()
     {
-        index--;
+        backgroundIndex--;
+    }
+
+    public void NextSong()
+    {
+        musicIndex++;
+        audioManager.ChangeMusic(musicIndex);
+    }
+
+    public void PreviousSong()
+    {
+        musicIndex--;
+        audioManager.ChangeMusic(musicIndex);
     }
 }

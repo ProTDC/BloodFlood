@@ -42,7 +42,7 @@ public class MainMeny : MonoBehaviour
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
-        extra.index = 0;
+        extra.backgroundIndex = 0;
         dataService.DeleteData<string>("/fish-stats.json");
         dataService.DeleteData<string>("/hamsters.json");
         dataService.DeleteData<string>("/points.json");
