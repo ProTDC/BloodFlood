@@ -142,9 +142,8 @@ public class EnemyHealth : MonoBehaviour
         if (Random.Range(0f, 1f) <= 0.1f) 
         {
             Instantiate(bulletPickup, transform.position, Quaternion.identity);
-            PlayerMovement.instance.currentBullets += 1;
         }
-
+        PlayerMovement.instance.currentBullets += 1;
         OrganManager.instance.MakeOrgan(rb.position);
         var boom = Instantiate(deathBlood, transform.position, Quaternion.identity);
         boom.Play();

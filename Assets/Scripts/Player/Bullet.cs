@@ -32,6 +32,15 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject);
+
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     //private IEnumerator StunEnemy(EnemyHealth enemy, float stunDuration)

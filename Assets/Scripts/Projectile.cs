@@ -67,6 +67,11 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
