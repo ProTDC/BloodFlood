@@ -16,12 +16,12 @@ public class ExtraMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI selectionTextMusic;
 
     [SerializeField] public int musicIndex;
-    [SerializeField] private int musicIndexLimit;
+    [SerializeField] private int musicIndexLimitMax;
 
     private void Start()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerMenu>();
-        musicIndexLimit = audioManager.menuThemes.Length - 1;
+        musicIndexLimitMax = audioManager.menuThemes.Length - 1;
 
         indexLimit = backgroundObjects.Length - 1;
         backgroundIndex = PlayerPrefs.GetInt("background");
@@ -75,14 +75,14 @@ public class ExtraMenu : MonoBehaviour
             backgroundIndex = indexLimit;
         }
 
-        if (musicIndex > musicIndexLimit)
+        if (musicIndex > musicIndexLimitMax)
         {
             musicIndex = 0;
         }
 
         if (musicIndex < 0)
         {
-            musicIndex = musicIndexLimit;
+            musicIndex = musicIndexLimitMax;
         }
 
         switch (musicIndex)
@@ -138,12 +138,28 @@ public class ExtraMenu : MonoBehaviour
     public void NextSong()
     {
         musicIndex++;
-        audioManager.ChangeMusic(musicIndex);
+
+        if (musicIndex > musicIndexLimitMax)
+        {
+            audioManager.ChangeMusic(0);
+        }
+        else
+        {
+            audioManager.ChangeMusic(musicIndex);
+        }
     }
 
     public void PreviousSong()
     {
         musicIndex--;
-        audioManager.ChangeMusic(musicIndex);
+
+        if (musicIndex < 0)
+        {
+            audioManager.ChangeMusic(musicIndexLimitMax);
+        }
+        else
+        {
+            audioManager.ChangeMusic(musicIndex);
+        }
     }
 }

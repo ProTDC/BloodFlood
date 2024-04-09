@@ -292,7 +292,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -4.3}
-  m_SizeDelta: {x: 183.286, y: 47.014}
+  m_SizeDelta: {x: 128.39, y: 47.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45017802
 MonoBehaviour:
@@ -5836,7 +5836,7 @@ MonoBehaviour:
   indexLimit: 0
   selectionTextMusic: {fileID: 1468194999}
   musicIndex: 0
-  musicIndexLimit: 0
+  musicIndexLimitMax: 0
 --- !u!1 &773112266
 GameObject:
   m_ObjectHideFlags: 0
@@ -7964,7 +7964,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -1, y: -342.6}
-  m_SizeDelta: {x: 142.515, y: 49}
+  m_SizeDelta: {x: 119.57, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937038025
 MonoBehaviour:
@@ -11055,7 +11055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -388, y: -237}
+  m_AnchoredPosition: {x: -388, y: -253}
   m_SizeDelta: {x: 302.4669, y: 53.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349287890
@@ -12630,7 +12630,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -14263,7 +14263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -441, y: -180}
+  m_AnchoredPosition: {x: -441, y: -196}
   m_SizeDelta: {x: 216.937, y: 53.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688351210
@@ -17330,7 +17330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 800930607652859370, guid: 1ac3b2033c8b21643b896472b9936605, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 800930607652859372, guid: 1ac3b2033c8b21643b896472b9936605, type: 3}
       propertyPath: m_RootOrder

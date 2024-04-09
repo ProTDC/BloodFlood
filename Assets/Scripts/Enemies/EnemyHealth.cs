@@ -139,10 +139,13 @@ public class EnemyHealth : MonoBehaviour
 
     public void Dead()
     {
+        //Spawn bullet pickup on death
         if (Random.Range(0f, 1f) <= 0.1f) 
         {
             Instantiate(bulletPickup, transform.position, Quaternion.identity);
         }
+
+        //Everything else
         PlayerMovement.instance.currentBullets += 1;
         OrganManager.instance.MakeOrgan(rb.position);
         var boom = Instantiate(deathBlood, transform.position, Quaternion.identity);
@@ -154,6 +157,7 @@ public class EnemyHealth : MonoBehaviour
         player.currentBlood += 2f;
         player.bloodbar.SetBlodd(player.currentBlood);
 
+        //Is this what's been fucking me over?
         gameObject.SetActive(false);
     }
 

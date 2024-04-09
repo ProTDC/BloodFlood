@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MeleeAttackManager : MonoBehaviour
 {
+    private PlayerMovement player;
     public static MeleeAttackManager instance;
     public GameObject bloodswordChargeBar;
     private Slider bloodswordChargeBar_Slider;
@@ -24,6 +25,7 @@ public class MeleeAttackManager : MonoBehaviour
     public bool canRecieveInput = true;
     public bool inputRecieved;
     public bool isSwingingSword = false;
+    private bool canBloodAttack = false;
     private Animator meleeAnimatior;
     private Animator bloodAnimatior;
     private Animator anim;
@@ -32,6 +34,7 @@ public class MeleeAttackManager : MonoBehaviour
 
     private void Awake()
     {
+        player = GetComponent<PlayerMovement>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         instance = this;
@@ -49,6 +52,15 @@ public class MeleeAttackManager : MonoBehaviour
     private void Update()
     {
         CheckInput();
+
+        if (player.currentBlood <= 99)
+        {
+            canBloodAttack = false;
+        }
+        else
+        {
+            canBloodAttack = true;
+        }
     }
 
     private void CheckInput()
@@ -65,7 +77,7 @@ public class MeleeAttackManager : MonoBehaviour
             meleeAttack = false;
         }
 
-        if (Input.GetKey(KeyCode.U) && canSwing && movement.CanUseBloodSword() == true)
+        if (Input.GetKey(KeyCode.U) && canSwing && movement.CanUseBloodSword() == true && canBloodAttack)
         {
             bloodswordChargeBar.SetActive(true);
             timer += Time.deltaTime;
@@ -92,6 +104,9 @@ public class MeleeAttackManager : MonoBehaviour
             bloodswordChargeBar_Slider.value = 0;
             timer = 0;
             bloodswordChargeBar.SetActive(false);
+
+            player.currentBlood -= 95;
+            player.bloodbar.SetBlodd(player.currentBlood);
         }
 
         if (Input.GetKeyUp(KeyCode.U) && (bloodSwordChargeTime < 2))

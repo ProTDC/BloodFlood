@@ -5096,6 +5096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4850d14d0afb36048994e192f17a05e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMetal: 0
   damageable: 1
   healthAmount: 20
   invulnerabilityTime: 0.2

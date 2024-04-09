@@ -9,11 +9,14 @@ public class WobblerAI : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 5f;
     public float wallAvoidanceDistance = 2f;
+    private bool isRight;
 
     private Transform player;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (player == null)
@@ -50,7 +53,9 @@ public class WobblerAI : MonoBehaviour
 
     void MoveTowards(Vector3 direction)
     {
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        //transform.Translate(direction * speed * Time.deltaTime, Space.World);
+
+        transform.Rotate(0, 0, 5);
     }
 
     void FaceMovementDirection(Vector3 direction)

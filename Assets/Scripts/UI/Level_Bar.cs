@@ -27,19 +27,23 @@ public class Level_Bar : MonoBehaviour
     {
         SetLevelNumber(levelSystemAnimated.GetLevelNumber());
 
+        //Read data from the level JSON file and Parse it into an Object
         LevelSystemStats data = dataService.LoadData<LevelSystemStats>("/level-stats.json", EncryptionEnabled);
         var jObject = JsonConvert.SerializeObject(data, Formatting.Indented);
         var json = JObject.Parse(jObject);
 
+        //Get levels and exp to add from JSON files
         int levelToAdd = json.Value<int>("Level");
         int expToAdd = json.Value<int>("Experience");
 
+        //Checks if the level isn't 0, adds levels if true
         if (json.Value<int>("Level") != 0)
         {
             levelSystem.SetLevelNumber(levelToAdd);
             SetLevelNumber(levelSystem.GetLevelNumber());
         }
 
+        //Checks if the experience isn't 0, adds experience if true
         if (json.Value<int>("Experience") != 0)
         {
             levelSystem.SetExperienceNumber(expToAdd);
@@ -47,21 +51,25 @@ public class Level_Bar : MonoBehaviour
         }
     }
 
+    //Controls how large the EXP bar is
     private void SetExperienceBarSize(float experienceNormalized)
     {
         experienceSlider.value = experienceNormalized;
     }
 
+    //Gets and sets the Level text number
     private void SetLevelNumber(int levelNumber)
     {
         levelText.text = $"{levelNumber}";
     }
 
+    //Set the local Level system to the global one
     public void SetLevelSystem(LevelSystem levelSystem)
     {
         this.levelSystem = levelSystem;
     }
 
+    //Gets the level system, gets the level and exp numbers, and dynamically changes them
     public void SetLevelSystemAnimated(LevelSystemAnimated levelSystemAnimated)
     {
         this.levelSystemAnimated = levelSystemAnimated;
@@ -74,12 +82,14 @@ public class Level_Bar : MonoBehaviour
 
     }
 
+    //Executes when the animated Level changes
     private void LevelSystemAnimated_OnLevelChanged(object sender, EventArgs e)
     {
         SetLevelNumber(levelSystemAnimated.GetLevelNumber());
         AddToStats();
     }
 
+    //Executes when the animated Experience changes
     private void LevelSystemAnimated_OnExperienceChanged(object sender, EventArgs e)
     {
         SetExperienceBarSize(levelSystemAnimated.GetExperienceNormalized());
