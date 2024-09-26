@@ -36,8 +36,11 @@ public class Parry : MonoBehaviour
         {
             EndParry();
         }
+
+        player.CheckDash();
     }
 
+    //Parry?
     public void StartParry()
     {
         isParrying = true;
@@ -46,6 +49,7 @@ public class Parry : MonoBehaviour
         spriteRenderer.color = Color.yellow;
     }
 
+    //PARRY THE PLAITPUS!??!??
     private void EndParry()
     {
         isParrying = false;
@@ -88,11 +92,49 @@ public class Parry : MonoBehaviour
 
         if (collision.transform.CompareTag("Enemy"))
         {
-            EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
-            EnemyDamage enemyDmg = collision.gameObject.GetComponent<EnemyDamage>();
+            StartCoroutine(ParryDash());
+            
+            //EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
+            //EnemyDamage enemyDmg = collision.gameObject.GetComponent<EnemyDamage>();
 
-            enemyHealth.Damage(enemyDmg.damage, transform.gameObject);
+            //enemyHealth.Damage(enemyDmg.damage, transform.gameObject);
         }
+    }
+
+    private IEnumerator ParryDash()
+    {
+        player.dashTimeLeft = player.dashingTime;
+        player.lastDash = Time.time;
+        player.canDash = false;
+        player.isDashing = true;
+        Physics2D.IgnoreLayerCollision(10, 11, true);
+        float originalGravity = player.body.gravityScale;
+        player.body.gravityScale = 0f;
+
+        Vector2 dashDirectionVector = new Vector2(player.dashDirection, 0f);
+        RaycastHit2D wallHit = Physics2D.Raycast(transform.position, dashDirectionVector, 1f, player.wallLayer);
+        PlayerAfterImagePool.Instance.GetFromPool();
+        player.lastImageXpos = transform.position.x;
+
+        if (wallHit.collider == null)
+        {
+            player.body.linearVelocity = new Vector2(player.dashDirection * player.dashingPower, 0f);
+            player.dashTimeLeft -= Time.deltaTime;
+            player.trail.emitting = true;
+            animator.SetTrigger("BetterDash");
+            yield return new WaitForSeconds(player.dashingTime);
+            player.trail.emitting = false;
+            player.body.gravityScale = originalGravity;
+            player.isDashing = false;
+            Physics2D.IgnoreLayerCollision(10, 11, false);
+            yield return new WaitForSeconds(player.dashingCooldown);
+        }
+        else
+        {
+            player.isDashing = false;
+            Physics2D.IgnoreLayerCollision(10, 11, false);
+        }
+        player.canDash = true;
     }
 
 

@@ -20,8 +20,10 @@ public class ExtraMenu : MonoBehaviour
 
     private void Start()
     {
+        //Finds and sets the current music and background based on player prefs
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManagerMenu>();
         musicIndexLimitMax = audioManager.menuThemes.Length - 1;
+        musicIndex = PlayerPrefs.GetInt("MenuMusic");
 
         indexLimit = backgroundObjects.Length - 1;
         backgroundIndex = PlayerPrefs.GetInt("background");
@@ -29,6 +31,8 @@ public class ExtraMenu : MonoBehaviour
 
     private void Update()
     {
+        //I COULD'VE JUST MADE THIS EASIER USE A SWITCH STATEMENT BUT NOOOOOO IF ELSE BARRAGE GO
+
         if (backgroundIndex == 0)
         {
             selectionText.text = "Ship";
@@ -84,6 +88,8 @@ public class ExtraMenu : MonoBehaviour
         {
             musicIndex = musicIndexLimitMax;
         }
+
+        //AND HERE I SUDDENLY USE IT WHAT THE FUCK PAST ME
 
         switch (musicIndex)
         {

@@ -70,7 +70,7 @@ public class MeleeWeapon : MonoBehaviour
         {
             if (downwardStrike)
             {
-                body.velocity = Vector2.zero;
+                body.linearVelocity = Vector2.zero;
                 body.AddForce(direction * meleeAttackManager.upwardsForce);
             }
             else

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dialogue_Test : MonoBehaviour
 {
+    public Animator anim;
     public GameObject button;
     public GameObject player;
     public GameObject dialogue;
@@ -30,17 +31,31 @@ public class Dialogue_Test : MonoBehaviour
 
     private void Update()
     {
+        //Starts conversation (ew sosializing)
         if (Input.GetKeyDown(KeyCode.W) && W_KeyOn == true)
         {
             player.GetComponent<PlayerMovement>().enabled = false;
             dialogue.SetActive(true);
             dialogueActive = true;
+            anim.SetTrigger("Talk");
         }
 
+        //The escape key isn't even being fucking used how did i get this to work???
         else if (Input.GetKeyDown(KeyCode.Escape) && dialogueActive == true || dialogue.activeSelf == false)
         {
             player.GetComponent<PlayerMovement>().enabled = true;
             dialogueActive = false;
+        }
+
+        //SHUT THE FUCK UP!!!
+        if (dialogueActive == false)
+        {
+            anim.SetTrigger("TalkStop");
+        }
+        //Spit thy shit
+        else
+        {
+            anim.SetTrigger("Talk");
         }
 
     }

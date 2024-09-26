@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] public float jumpPower;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private TrailRenderer trail;
+    [SerializeField] public LayerMask wallLayer;
+    [SerializeField] public TrailRenderer trail;
     [SerializeField] private CinemachineVirtualCamera vcam;
     private AudioManager audioManager;
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRend;
 
     [Header("Componenets")]
-    private Rigidbody2D body;
+    public Rigidbody2D body;
     private BoxCollider2D boxcollider;
     private float wallJumpCooldown;
     private float horizontalInput;
@@ -60,8 +60,6 @@ public class PlayerMovement : MonoBehaviour
     private LevelSystemAnimated levelSystemAnimated;
     private PlayerSkills playerSkills;
     private PlayerDeath death;
-    private Parry parry;
-    private bool isParrying;
 
 
     [Header("Variables")]
@@ -72,14 +70,14 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCounter;
     private float jumpBufferTime = 0.1f;
     private float jumpBufferCounter;
-    private bool canDash = true;
+    public bool canDash = true;
     public bool isDashing;
     public float dashingPower = 24;
     public float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
-    private int dashDirection = 1;
-    private float dashTimeLeft;
-    private float lastDash = -100;
+    public float dashingCooldown = 1f;
+    public int dashDirection = 1;
+    public float dashTimeLeft;
+    public float lastDash = -100;
     public float lastImageXpos;
     public float distanceBetweenImages;
     private Coroutine afterImageCoroutine;
@@ -103,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         boxcollider = GetComponent<BoxCollider2D>();
         death = GetComponent<PlayerDeath>();
-        parry = GetComponent<Parry>();
         vcam = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
@@ -189,12 +186,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallJumpCooldown > 0.2f)
         {
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
 
             if (onWall() && !isGrounded() && canWallJump)
             {
                 body.gravityScale = 8f;
-                body.velocity = Vector2.zero;
+                body.linearVelocity = Vector2.zero;
                 squashStretchAnimator.SetTrigger("WallGlide");
             }
             else
@@ -223,9 +220,9 @@ public class PlayerMovement : MonoBehaviour
                 jumpBufferCounter = 0;
             }
 
-            if (Input.GetKeyUp(jumpKey) && body.velocity.y > 0)
+            if (Input.GetKeyUp(jumpKey) && body.linearVelocity.y > 0)
             {
-                body.velocity = new Vector2(body.velocity.x, 0);
+                body.linearVelocity = new Vector2(body.linearVelocity.x, 0);
                 coyoteTimeCounter = 0f;
             }
         }
@@ -259,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
             CancelInvoke("PlayWalkingSFX");
         }
 
-        if (body.velocity.y <= FallingThreshold)
+        if (body.linearVelocity.y <= FallingThreshold)
         {
             squashStretchAnimator.SetTrigger("Falling");
         }
@@ -290,9 +287,9 @@ public class PlayerMovement : MonoBehaviour
 
         heal = 30;
 
-        if (Input.GetKeyDown(KeyCode.K) && CanUseDeflect() == true)
+        if (CanUseDeflect())
         {
-            Deflect();
+            //Add deflect logic
         }
     }
 
@@ -324,19 +321,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (onWall() && !isGrounded() && horizontalInput != 0)
         {
-            body.velocity = new Vector2(-Mathf.Sign(horizontalInput) * 10, 12);
+            body.linearVelocity = new Vector2(-Mathf.Sign(horizontalInput) * 10, 12);
             wallJumpCooldown = 0;
         }
         else if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
-            body.velocity = new Vector2(body.velocity.x, jumpPower);
+            body.linearVelocity = new Vector2(body.linearVelocity.x, jumpPower);
             Dust();
             squashStretchAnimator.SetTrigger("Jump");
         }
 
-        if (body.velocity.y > 0f)
+        if (body.linearVelocity.y > 0f)
         {
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y * 1f);
+            body.linearVelocity = new Vector2(body.linearVelocity.x, body.linearVelocity.y * 1f);
         }
     }
 
@@ -358,7 +355,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallHit.collider == null)
         {
-            body.velocity = new Vector2(dashDirection * dashingPower, 0f);
+            body.linearVelocity = new Vector2(dashDirection * dashingPower, 0f);
             dashTimeLeft -= Time.deltaTime;
             //trail.emitting = true;
             squashStretchAnimator.SetTrigger("Dash");
@@ -377,7 +374,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-    private void CheckDash()
+    public void CheckDash()
     {
         //This boring piece of shit spawns afterimages if they haven't already
         if (isDashing && afterImageCoroutine == null)
@@ -390,11 +387,6 @@ public class PlayerMovement : MonoBehaviour
             StopCoroutine(afterImageCoroutine);
             afterImageCoroutine = null;
         }
-    }
-
-    private void Deflect()
-    {
-        parry.StartParry();
     }
 
     private IEnumerator SpawnAfterImages()
@@ -432,8 +424,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Water"))
         {
-            //Damage(999);
-            //healthbar.SetHealth(currentHealth);
             transform.position = new Vector3(-2.8f, -3.9f, 0f);
         }
     }
@@ -476,15 +466,12 @@ public class PlayerMovement : MonoBehaviour
     {
         //CameraShake.Instance.ShakeCamera(5f, .2f)
         audioManager.PlaySFX(audioManager.playerTakingDamage);
-
-        if (parry.isParrying == false)
-        {
-            currentHealth -= damage;
-            body.AddForce(new Vector2(500, 250));
-            healthbar.SetHealth(currentHealth);
-            StartCoroutine(Invunerablility());
-            FindObjectOfType<HitStop>().Stop(0.2f);
-        }
+        
+        currentHealth -= damage;
+        body.AddForce(new Vector2(500, 250));
+        healthbar.SetHealth(currentHealth);
+        StartCoroutine(Invunerablility());
+        FindObjectOfType<HitStop>().Stop(0.2f);
 
         if (currentHealth <= 0)
         {
@@ -512,7 +499,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanUseDeflect()
     {
-        return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Deflect);
+        //return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.Deflect);
+        return true;
     }
 
     public bool CanUseBloodSword()

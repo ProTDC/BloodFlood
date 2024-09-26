@@ -18,7 +18,7 @@ public class HookCast : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        rb.linearVelocity = transform.right * speed;
         line.DrawLineBetweenObjects(transform, rod.firePoint.transform);
     }
 

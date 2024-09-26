@@ -34,8 +34,6 @@ public class MachineGun : MonoBehaviour
     {
         if (canShoot == true)
         {
-            var audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-            audio.PlaySFX(audio.playerShooting);
             int burstSize = 3;
 
             for (int i = 0; i < burstSize; i++)
@@ -56,6 +54,9 @@ public class MachineGun : MonoBehaviour
     IEnumerator InstantiateBulletWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
+        var audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audio.PlaySFX(audio.playerShooting);
 
         float minRotation = -5f;
         float maxRotation = 5f;

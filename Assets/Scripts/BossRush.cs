@@ -41,7 +41,7 @@ public class BossRush : MonoBehaviour
         float originalGravity = body.gravityScale;
         body.gravityScale = 0f;
         trail.emitting = true;
-        body.velocity = new Vector2(rushDirection * rushPower, 0f);
+        body.linearVelocity = new Vector2(rushDirection * rushPower, 0f);
         yield return new WaitForSeconds(1f);
         body.gravityScale = originalGravity;
         trail.emitting = false;

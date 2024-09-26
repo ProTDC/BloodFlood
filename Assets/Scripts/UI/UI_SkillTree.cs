@@ -23,11 +23,20 @@ public class UI_SkillTree : MonoBehaviour
     private int points;
     [SerializeField] private TextMeshProUGUI pointsText;
 
+    [SerializeField] private TextMeshProUGUI notEnoughPointsText;
     [SerializeField] private Level_Bar levelBar;
     [SerializeField] private GameObject deflectYes;
     [SerializeField] private GameObject bloodSwordYes;
     [SerializeField] private TextMeshProUGUI statusTextDeflect;
     [SerializeField] private TextMeshProUGUI statusTextBloodSword;
+
+    [SerializeField] private GameObject DFObject;
+    [SerializeField] private GameObject BSObject;
+    [SerializeField] private GameObject WHObject;
+
+    [SerializeField] private GameObject DFPurchase;
+    [SerializeField] private GameObject BSPurchase;
+    [SerializeField] private GameObject WHPurchase;
 
     private void Start()
     {
@@ -43,10 +52,13 @@ public class UI_SkillTree : MonoBehaviour
 
     private void Update()
     {
+        //Ok so, checks if the yes purchase button is being clicked
         deflectYes.GetComponent<Button_UI>().ClickFunc = () => 
         {
+            //Checks if the players has enough points to unlock said skill
             if (points >= playerSkills.skillCosts["Deflect"])
             {
+                //Unlocks skill and subtracts points
                 playerSkills.UnlockSkill(PlayerSkills.SkillType.Deflect);
                 GameObject.Find("YouSure").SetActive(false);
                 GameObject.Find("Deflect_Yes").SetActive(false);
@@ -54,13 +66,29 @@ public class UI_SkillTree : MonoBehaviour
                 statusTextDeflect.text = "UNLOCKED";
 
                 points -= playerSkills.skillCosts["Deflect"];
+                AddToStats();
             }
             else
             {
-                GameObject.Find("YouSure").GetComponent<TextMeshProUGUI>().text = "Not enough points :(";
+                //Dark wizard magic that disallows you to purchase skill
+
+                if (DFPurchase != null)
+                {
+                    if (!DFPurchase.activeSelf)
+                    {
+                        DFPurchase.SetActive(true);
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("DFPurchase not found!");
+                }
+                notEnoughPointsText.gameObject.SetActive(true);
+                DFObject.SetActive(false);
+                GameObject.Find("YouSure").SetActive(false);
                 GameObject.Find("Deflect_Yes").SetActive(false);
                 GameObject.Find("No").SetActive(false);
-                Invoke("SetTextBack", 1);
+                GameObject.Find("DFPurchase").SetActive(true);
             }
         };
 
@@ -75,13 +103,26 @@ public class UI_SkillTree : MonoBehaviour
                 statusTextBloodSword.text = "UNLOCKED";
 
                 points -= playerSkills.skillCosts["BloodSword"];
+                AddToStats();
             }
             else
             {
-                GameObject.Find("YouSure").GetComponent<TextMeshProUGUI>().text = "Not enough points :(";
+                if (BSPurchase != null)
+                {
+                    if (!BSPurchase.activeSelf)
+                    {
+                        BSPurchase.SetActive(true);
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("BSPurchase not found!");
+                }
+                notEnoughPointsText.gameObject.SetActive(true);
+                BSObject.SetActive(false);
+                GameObject.Find("YouSure").SetActive(false);
                 GameObject.Find("BS_Yes").SetActive(false);
                 GameObject.Find("No").SetActive(false);
-                Invoke("SetTextBack", 1);
             }
         };
 
@@ -104,11 +145,6 @@ public class UI_SkillTree : MonoBehaviour
     {
         points += 2;
         AddToStats();
-    }
-
-    private void SetTextBack()
-    {
-        GameObject.Find("YouSure").GetComponent<TextMeshProUGUI>().text = "Are you sure?";
     }
 
     public void SerializeJson()

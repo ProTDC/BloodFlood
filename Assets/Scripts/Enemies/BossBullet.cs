@@ -13,7 +13,7 @@ public class BossBullet : MonoBehaviour
     public Rigidbody2D rb;
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        rb.linearVelocity = transform.right * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -15,41 +15,42 @@ public class Projectile : MonoBehaviour
 
     public GameObject explosionParticle;
 
+    private float timer;
+    public bool timerActive;
     void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-        //if (followsPlayer)
-        //{
-        //    player = GameObject.FindGameObjectWithTag("Player");
+        if (!followsPlayer)
+        {
+            rb.linearVelocity = transform.right * speed;
+        }
 
-        //    Vector3 direction = player.transform.position - transform.position;
-        //    rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
-
-        //    float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        //    transform.rotation = Quaternion.Euler(0, 0, rot);
-        //}
-        //else
-        //{
-        //    rb.velocity = transform.right * speed;
-        //}
+        timer = 0;
     }
 
     private void FixedUpdate()
     {
-        if (followsPlayer)
+        if (timer < .5)
+        {
+            timer += Time.deltaTime;
+            timerActive = true;
+        }
+
+        if (timer >= .5)
+        {
+            timerActive = false;
+        }
+
+        if (followsPlayer && timerActive)
         {
             player = GameObject.FindGameObjectWithTag("Player");
 
             Vector3 direction = player.transform.position - transform.position;
-            rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+            rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * speed;
 
             float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, rot);
-        }
-        else
-        {
-            rb.velocity = transform.right * speed;
         }
     }
 
@@ -89,13 +90,18 @@ public class Projectile : MonoBehaviour
                 audioManager.PlaySFX(audioManager.playerDying);
             }
         }
+
+        if (collision.CompareTag("Weapon"))
+        {
+            followsPlayer = false;
+        }
     }
 
     public void Flip()
     {
         canHurtEnemies = true;
 
-        rb.velocity = -rb.velocity * 2f;
+        rb.linearVelocity = -rb.linearVelocity * 2f;
 
         transform.Rotate(0f, 180f, 0f);
 

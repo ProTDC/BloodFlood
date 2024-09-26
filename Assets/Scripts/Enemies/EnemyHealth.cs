@@ -92,7 +92,7 @@ public class EnemyHealth : MonoBehaviour
                 audioManager.PlaySFX(audioManager.playerBulletFlesh);
             }
 
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             hit = true;
             currentHealth -= amount;
             sprite.color = new Color(1, 0, 0, 0.5f);
@@ -120,7 +120,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-
+    //Would stun the enemy and turn them blue if it actually fucking worked
     private IEnumerator StunEffect(float stunDuration)
     {
         isStunned = true;
@@ -132,6 +132,7 @@ public class EnemyHealth : MonoBehaviour
         ChangeColor(originalColor);
     }
 
+    //idk... color stuff?
     private void ChangeColor(Color newColor)
     {
         sprite.color = newColor;
@@ -161,6 +162,7 @@ public class EnemyHealth : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    //I honestly forgot what this even did
     private IEnumerator TurnOffHit()
     {
         yield return new WaitForSeconds(invulnerabilityTime);

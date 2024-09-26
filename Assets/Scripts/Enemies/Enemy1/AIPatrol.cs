@@ -51,7 +51,7 @@ public class AIPatrol : MonoBehaviour
                 Flip();
             }
             mustPatrol = false;
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
 
             if (canChasing == true)
             {
@@ -81,7 +81,7 @@ public class AIPatrol : MonoBehaviour
             Flip();
         }
 
-        rb.velocity = new Vector2(walkSpeed * Time.deltaTime, rb.velocity.y);
+        rb.linearVelocity = new Vector2(walkSpeed * Time.deltaTime, rb.linearVelocity.y);
     }
 
     void Flip()

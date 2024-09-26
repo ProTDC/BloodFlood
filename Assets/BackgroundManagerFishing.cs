@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class BackgroundManagerFishing : MonoBehaviour
 {
-    [SerializeField] public Light2D sunLight;
+    [SerializeField] public UnityEngine.Rendering.Universal.Light2D sunLight;
     private AudioManager audioManager;
 
     [SerializeField] public GameObject[] dayTime;

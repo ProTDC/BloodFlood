@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class Flickering : MonoBehaviour
 {
@@ -12,11 +12,11 @@ public class Flickering : MonoBehaviour
     public float value1 = 1.4f;
     public float value2 = 0f;
 
-    public Light2D lamp;
+    public UnityEngine.Rendering.Universal.Light2D lamp;
 
     void Start()
     {
-        lamp = GetComponent<Light2D>();
+        lamp = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
     }
     void Update()
     {

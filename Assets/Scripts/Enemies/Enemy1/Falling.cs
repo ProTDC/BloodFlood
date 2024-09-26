@@ -24,7 +24,7 @@ public class Falling : MonoBehaviour
     private IEnumerator Reset()
     {
         yield return new WaitForSeconds(delay);
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         OnDone?.Invoke();
     }
 }

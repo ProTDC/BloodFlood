@@ -95,6 +95,7 @@ public class Level_Bar : MonoBehaviour
         SetExperienceBarSize(levelSystemAnimated.GetExperienceNormalized());
     }
 
+    //Uses arcane and ancient powers to save you current level into a Json file
     public void SerializeJson()
     {
         if (dataService.SaveData("/level-stats.json", stats, EncryptionEnabled))

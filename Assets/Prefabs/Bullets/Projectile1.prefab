@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9054592145759426091}
   - component: {fileID: 2515340402580030399}
   - component: {fileID: 6763960258763598517}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Projectile1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -149,7 +149,8 @@ MonoBehaviour:
   bulletDamage: 30
   rb: {fileID: 6928972250814963654}
   followsPlayer: 0
-  firePoints: []
+  explosionParticle: {fileID: 2689860022662416512, guid: a13dab5aae94ba24385d94b793673ca4, type: 3}
+  timerActive: 0
 --- !u!96 &6763960258763598517
 TrailRenderer:
   serializedVersion: 2
@@ -189,7 +190,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 358552045
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Time: 0.1
   m_Parameters:

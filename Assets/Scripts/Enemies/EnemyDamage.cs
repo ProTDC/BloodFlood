@@ -19,6 +19,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("Player takes damage here");
             collision.GetComponent<PlayerMovement>().Damage(damage);    
             //DmgShake.Instance.ShakeCamera(5f, .1f);
             //StartCoroutine(Effect());
